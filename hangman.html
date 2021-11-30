@@ -25,6 +25,7 @@
 
         $(".letter").click(function(e)   {
           //run this when a letter is clicked
+          if (finished) { return; }
           var letter = $(e.target).text();
           console.log("clicked on", letter);
 
