@@ -40,9 +40,9 @@
           $("#word").html(blanks);
 
           //check if won
-          if (! blank.includes("-")){
-            finished= true;
-            $("messages").text("YOU WIN!");
+          if (! blanks.includes("-")) {
+            finished = true;
+            $("#messages").text("YOU WIN!");
           }
 
         });
