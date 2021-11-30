@@ -34,7 +34,7 @@
 
           //check if letter has been guessed
           if (guessed.includes(letter)) {
-            $("#messages").text("You already guessed that letter "+ letter +"");
+            $("#messages").text("You already guessed" "+ letter +"" ");
           } else {
             guessed = guessed + letter;
             guesses = guesses - 1;
