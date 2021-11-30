@@ -27,6 +27,9 @@
           var letter = $(e.target).text();
           console.log("clicked on", letter);
 
+          //change text decoration for letter
+          $("s"+letter).css("text-decoration", "line-through");
+
           //check the letter in word to look for match
           var count =0;
           for (l of word) {
