@@ -14,8 +14,8 @@
       // $(document) is the jQuery reference to the whole web page
       $(document).ready( function() {
         // put your javascript here
-        var word =   "s k y v a n"; // the word to guess
-        var blanks = "- - - - - - "; // this variable holds the temporary information
+        var word =   "s k y v a n" ; // the word to guess
+        var blanks = "- - - - - - " ; // this variable holds the temporary information
         var guesses = 7; // the number of guesses left
         var guessed  = []; // these are the letters that have already been guessed
         var finished = false; // change to true when the game is finished
@@ -27,9 +27,20 @@
           //run this when a letter is clicked
           var letter = $(e.target).text();
           console.log("clicked on", letter);
-                    });
 
-              });
+          //check the letter in word to look for match
+          var count =0;
+          for (l of word) {
+            if (l == letter) {
+              blanks = blanks.substring(0, count) + letter +
+                       blanks.substring((count+1),blanks.length);
+            }
+          }
+
+
+        });
+
+  });
 
   </script>
 </head>
