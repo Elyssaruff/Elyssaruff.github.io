@@ -47,9 +47,13 @@
           // Listen for a click event on the map
           map.on('click', onMapClick);
 
-          // load a geojson from external file
-          $.getJSON("buildings.json",function(data){
-	      // add GeoJSON layer to the map once the file is loaded
+          // load GeoJSON from an external file
+            $.getJSON("buildings.json",function(data){
+	        // add GeoJSON layer to the map once the file is loaded
+	          L.geoJson(data).addTo(map);
+
+
+          // add GeoJSON layer to the map once the file is loaded
             buildings = L.geoJson(data,{
               onEachFeature: function (feature, layer) {
                 layer.bindPopup("Building Type: " + feature.properties.BLDG_TYPE +
