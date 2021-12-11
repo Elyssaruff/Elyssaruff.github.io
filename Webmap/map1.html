@@ -30,7 +30,19 @@
             myDataPoint.bindPopup("<h3>Auraria Library</h3><p>Denver, CO<br>Information about Auraria Library.</p>");
             myArea.bindPopup("Auraria Campus");
 
+            // Create an Empty Popup
+            var popup = L.popup();
 
+            // Write function to set Properties of the Popup
+            function onMapClick(e) {
+	          popup
+    	        .setLatLng(e.latlng)
+    	        .setContent("You clicked the map at " + e.latlng.toString())
+    	        .openOn(map);
+
+
+          // Listen for a click event on the map
+          map.on('click', onMapClick); 
         }
   </script>
 
@@ -40,7 +52,7 @@
 
         <div id="map" style="width: 705px; height: 375px"></div>
 
-      
+
 
 
 
