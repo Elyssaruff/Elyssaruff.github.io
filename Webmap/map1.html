@@ -10,7 +10,7 @@
           <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
           <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
   <script>
-
+      $(document).ready(function()  {
 	          // Create variable to hold map element, give initial settings to map
 	          var map = L.map('map',{ center: [39.743218, -105.004568], zoom: 14});
 
@@ -39,11 +39,15 @@
     	        .setLatLng(e.latlng)
     	        .setContent("You clicked the map at " + e.latlng.toString())
     	        .openOn(map);
+              console.log("clicked on the map");
+            }
 
 
           // Listen for a click event on the map
-          map.on('click', onMapClick); 
-        }
+          map.on('click', onMapClick);
+
+        // closing for document ready function
+        });
   </script>
 
 
